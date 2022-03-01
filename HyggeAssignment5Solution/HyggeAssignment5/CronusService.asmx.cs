@@ -27,5 +27,10 @@ namespace HyggeAssignment5
         {
             Console.WriteLine("My name is Rebecca Kejlberg!!!");
         }
-    }
+        [WebMethod]
+        public void SendToDatabase(String query)
+        {
+            return DataAccessLayer.SendToDatabase(query);
+        }
+}
 }
