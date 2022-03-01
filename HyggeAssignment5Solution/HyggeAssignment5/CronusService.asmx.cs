@@ -25,7 +25,7 @@ namespace HyggeAssignment5
         [WebMethod]
         public void Print()
         {
-            Console.WriteLine("My name is Rebecca Kejlberg");
+            Console.WriteLine("My name is Rebecca Kejlberg!!!");
         }
     }
 }
