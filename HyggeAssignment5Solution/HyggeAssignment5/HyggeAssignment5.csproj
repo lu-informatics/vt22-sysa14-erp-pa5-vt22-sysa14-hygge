@@ -83,6 +83,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataAccessLayer.cs" />
+    <Compile Include="ParamArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
