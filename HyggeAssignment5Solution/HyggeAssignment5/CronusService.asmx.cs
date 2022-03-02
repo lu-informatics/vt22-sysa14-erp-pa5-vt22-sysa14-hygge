@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -28,9 +29,9 @@ namespace HyggeAssignment5
             Console.WriteLine("My name is Rebecca Kejlberg!!!");
         }
         [WebMethod]
-        public void SendToDatabase(String query)
+        public DataSet Table(String query)
         {
-            return DataAccessLayer.SendToDatabase(query);
+            return DataAccessLayer.Querys(query);
         }
 }
 }
