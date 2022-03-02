@@ -30,19 +30,22 @@ namespace Assignment5Client1
         {
             ComboBox cb = sender as ComboBox;
 
-            ArrayOfXElement ds = null;
+            ArrayOfXElement ds;
 
             switch (cb.Text)
             {
                 case "all tables in the database 1":
-                    ds = proxy.Table("all tables in the database 1");
+                    ds = proxy.Table();
                     break;
             }
+            ds = proxy.Table();
             dataGridView1.DataSource = ToDataSet(ds).Tables[0];
     }
         public DataSet ToDataSet(ArrayOfXElement arrayOfXElement)
       
             {
+            Console.WriteLine(arrayOfXElement);
+            Console.WriteLine(arrayOfXElement.Nodes[0]);
                 var strSchema = arrayOfXElement.Nodes[0].ToString();
                 var strData = arrayOfXElement.Nodes[1].ToString();
                 var strXml = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n\t<DataSet>";
