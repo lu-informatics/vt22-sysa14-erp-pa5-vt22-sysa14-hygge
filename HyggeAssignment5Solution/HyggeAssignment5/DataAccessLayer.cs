@@ -31,15 +31,20 @@ namespace HyggeAssignment5
         }
 
 
-        public static DataSet Querys() => SendToDatabase("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE");
+        public static DataSet Querys()
+        { 
+
+
+        //=> SendToDatabase("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE");
+
+
+        }
+    
 
 
 
 
-
-
-
-        public static class Utils
+    public static class Utils
         {
             // These methods partially define the SQL query, leaving parameter fill for the SendToDatabes method.
             // IMPORTANT: These methods requires ParamIDs to match parameter names in the database.
