@@ -31,14 +31,16 @@ namespace Assignment5Client1
             ComboBox cb = sender as ComboBox;
 
             ArrayOfXElement ds;
-
-            switch (cb.Text)
+            Console.WriteLine(cb.SelectedItem.ToString());
+            switch (cb.SelectedItem.ToString())
             {
                 case "all tables in the database 1":
                     ds = proxy.Table();
                     break;
+                default: ds = proxy.Table();
+                    break;
             }
-            ds = proxy.Table();
+            
             dataGridView1.DataSource = ToDataSet(ds).Tables[0];
     }
         public DataSet ToDataSet(ArrayOfXElement arrayOfXElement)

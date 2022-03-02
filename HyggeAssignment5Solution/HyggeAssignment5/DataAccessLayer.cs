@@ -32,8 +32,9 @@ namespace HyggeAssignment5
         }
 
 
-        public static DataSet Querys(String query) => SendToDatabase("SELECT ER.[First Name], ER.[Last Name], ER.[Birth Date], E.[First Name] , E.[Last Name], E.[Job Title] FROM[CRONUS Sverige AB$Employee] E JOIN[CRONUS Sverige AB$Employee Relative] ER ON ER.[Employee No_] = E.No_");
+        public static DataSet Querys() => SendToDatabase("SELECT ER.[First Name], ER.[Last Name], ER.[Birth Date], E.[First Name] , E.[Last Name], E.[Job Title] FROM[CRONUS Sverige AB$Employee] E JOIN[CRONUS Sverige AB$Employee Relative] ER ON ER.[Employee No_] = E.No_");
 
+        
                
             
 

@@ -29,9 +29,9 @@ namespace HyggeAssignment5
             Console.WriteLine("My name is Rebecca Kejlberg!!!");
         }
         [WebMethod]
-        public DataSet Table(String query)
+        public DataSet Table()
         {
-            return DataAccessLayer.Querys(query);
+            return DataAccessLayer.Querys();
         }
 }
 }
