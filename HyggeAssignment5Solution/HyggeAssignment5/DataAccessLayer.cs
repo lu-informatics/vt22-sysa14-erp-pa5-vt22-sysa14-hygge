@@ -12,7 +12,7 @@ namespace HyggeAssignment5
         public static DataSet SendToDatabase(string sqlQuery, params ParamArgs[] args){
             try
             {
-                using (SqlConnection cnn = new SqlConnection("Data Source = SYSA12; Initial Catalog = Cronos; User ID=hygge; Password = hej123;"))
+                using (SqlConnection cnn = new SqlConnection("Data Source = SYST4DEV01; Initial Catalog = Cronos; User ID=hygge; Password = hej123;"))
                 {
                     cnn.Open();
             using(SqlCommand command = new SqlCommand(sqlQuery, cnn))
@@ -28,8 +28,8 @@ namespace HyggeAssignment5
                             switch(queryType)
                             {
                                 case "ALL TABLES":
-                                    adapter.showtables = command;
-                                    adapter.showtables.ExecuteNonQuery();
+                                    adapter.ShowTables = command;
+                                    adapter.ShowTables.ExecuteNonQuery();
                                     break;
                             }
                             return null;
@@ -39,72 +39,74 @@ namespace HyggeAssignment5
 
 
 
-
-
-
-
-                        //{
-                        //    using (SqlConnection cnn = new SqlConnection("Data Source = SYSA12; Initial Catalog = Cronos; User ID=hygge; Password = hej123;")) 
-                        //    {
-
-                        //        string queryString = "SELECT * FROM [CRONUS Sverige AB$Employee]";
-
-                        //        {
-                        //            SqlCommand command = new SqlCommand(queryString, cnn);
-                        //            cnn.Open();
-                        //            using(SqlDataReader reader = command.ExecuteReader()){
-
-                        //                return(String.Format("{0}, {1}", reader[0], reader[1]));
-
-
-                        //        }
-
-                        //    void SendTable()
-                        //{
-                        //    string response = "";
-                        //    while (response != null)
-                        //    {
-                        //        response = Console.ReadLine();
-                        //        switch(response)
-                        //        {
-                        //            case "Contents and metadata for the Employee tables and related tables";
-                        //                            string queryString = "";
-                        //            break;
-                        //            case "Information about Employees and their relatives";
-                        //                            string queryString1 = "SELECT ER.[First Name], ER.[Last Name], ER.[Birth Date], E.[First Name] , E.[Last Name], E.[Job Title]FROM [CRONUS Sverige AB$Employee] E JOIN[CRONUS Sverige AB$Employee Relative] ER ON ER.[Employee No_] = E.No_;
-                        //             break;
-                        //            case "Information about Employees that have been absent due to sickness in the year of 2004";
-                        //            //
-                        //             break;
-                        //            case "First name of employee that has been absent the most";
-                        //                //
-                        //                break;
-                        //            case "ALL KEYS";
-                        //                //
-                        //                break;
-                        //            case "ALL INDEXES";
-                        //                //
-                        //                break;
-
-                        //            case "ALL TABLE_CONSTRAINTS";
-                        //                //
-                        //                break;
-                        //            case "ALL TABLES IN THE DATABASE 1";
-                        //                //
-                        //                break;
-                        //            case "ALL TABLES IN THE DATABASE 2";
-                        //                //
-                        //                break;
-                        //            case "ALL COLUMNS OF THE EMPLOYEE TABLE 1";
-                        //                //
-                        //                break;
-                        //            case "ALL COLUMNS OF THE EMPLOYEE TABLE 2";
-                        //                //
-                        //                break;
-
-
-                        //        }
-                    }
+                                                }
+                }
+            }
 }
+    }
 }
-}
+
+
+
+
+//{
+//    using (SqlConnection cnn = new SqlConnection("Data Source = SYSA12; Initial Catalog = Cronos; User ID=hygge; Password = hej123;")) 
+//    {
+
+//        string queryString = "SELECT * FROM [CRONUS Sverige AB$Employee]";
+
+//        {
+//            SqlCommand command = new SqlCommand(queryString, cnn);
+//            cnn.Open();
+//            using(SqlDataReader reader = command.ExecuteReader()){
+
+//                return(String.Format("{0}, {1}", reader[0], reader[1]));
+
+
+//        }
+
+//    void SendTable()
+//{
+//    string response = "";
+//    while (response != null)
+//    {
+//        response = Console.ReadLine();
+//        switch(response)
+//        {
+//            case "Contents and metadata for the Employee tables and related tables";
+//                            string queryString = "";
+//            break;
+//            case "Information about Employees and their relatives";
+//                            string queryString1 = "SELECT ER.[First Name], ER.[Last Name], ER.[Birth Date], E.[First Name] , E.[Last Name], E.[Job Title]FROM [CRONUS Sverige AB$Employee] E JOIN[CRONUS Sverige AB$Employee Relative] ER ON ER.[Employee No_] = E.No_;
+//             break;
+//            case "Information about Employees that have been absent due to sickness in the year of 2004";
+//            //
+//             break;
+//            case "First name of employee that has been absent the most";
+//                //
+//                break;
+//            case "ALL KEYS";
+//                //
+//                break;
+//            case "ALL INDEXES";
+//                //
+//                break;
+
+//            case "ALL TABLE_CONSTRAINTS";
+//                //
+//                break;
+//            case "ALL TABLES IN THE DATABASE 1";
+//                //
+//                break;
+//            case "ALL TABLES IN THE DATABASE 2";
+//                //
+//                break;
+//            case "ALL COLUMNS OF THE EMPLOYEE TABLE 1";
+//                //
+//                break;
+//            case "ALL COLUMNS OF THE EMPLOYEE TABLE 2";
+//                //
+//                break;
+
+
+//        }
