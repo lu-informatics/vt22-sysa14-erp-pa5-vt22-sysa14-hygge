@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,15 +34,28 @@ namespace Assignment5Client1
 
             switch (cb.Text)
             {
-                case "All tables in the database 1":
-                    ds = proxy.Table("All tables in the database 1");
+                case "all tables in the database 1":
+                    ds = proxy.Table("all tables in the database 1");
                     break;
             }
-            dataGridView1.DataSource = ToDataSet
+            dataGridView1.DataSource = ToDataSet(ds).Tables[0];
     }
         public DataSet ToDataSet(ArrayOfXElement arrayOfXElement)
-        {
+      
+            {
+                var strSchema = arrayOfXElement.Nodes[0].ToString();
+                var strData = arrayOfXElement.Nodes[1].ToString();
+                var strXml = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n\t<DataSet>";
+                strXml += strSchema + strData;
+                strXml += "</DataSet>";
 
+                DataSet ds = new DataSet("TestDataSet");
+                ds.ReadXml(new MemoryStream(Encoding.UTF8.GetBytes(strXml)));
+
+                return ds;
+            }
         }
-}
-}
+    }
+
+
+

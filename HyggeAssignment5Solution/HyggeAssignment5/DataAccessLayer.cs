@@ -27,18 +27,16 @@ namespace HyggeAssignment5
             Relationship,
             Interest,
             Industry,
-            Education
+            Education,
+            EducationIndustry
         }
 
 
-        public static DataSet Querys()
-        { 
+        public static DataSet Querys() => SendToDatabase("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE");
 
+               
+            
 
-        //=> SendToDatabase("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE");
-
-
-        }
     
 
 
