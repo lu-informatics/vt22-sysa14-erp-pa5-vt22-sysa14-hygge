@@ -79,7 +79,7 @@ namespace HyggeAssignment5
 
             switch (tableName)
             {
-                case "See Metadata for the Employee Tables and Related Tables(one)":
+                case "See Metadata for the Employee Tables and Related Tables (one)":
                     dataSet = DataAccessLayer.EmployeeMetaDataContentsOne();
                     break;
 
