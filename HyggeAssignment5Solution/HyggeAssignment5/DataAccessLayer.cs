@@ -154,7 +154,7 @@ namespace HyggeAssignment5
         {
             try
             {
-                using (SqlConnection cnn = new SqlConnection("Data Source = SYSA12; Initial Catalog = Cronos; User ID=hygge ; Password =hej123 "))
+                using (SqlConnection cnn = new SqlConnection("Data Source = VMKARIN; Initial Catalog = Cronus; User ID=hygge ; Password =hej123 "))
                 { //SQL Connection
                     cnn.Open();
                     using (SqlCommand command = new SqlCommand(sqlQuery, cnn)) // "using" keyword ensures disposal when objects are no longer used
