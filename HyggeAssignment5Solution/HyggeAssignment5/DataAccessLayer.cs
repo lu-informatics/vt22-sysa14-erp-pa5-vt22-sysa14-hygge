@@ -30,7 +30,7 @@ namespace HyggeAssignment5
         }
 
 
-        public static DataSet EmployeeMetaDataContentsOne() => SendToDatabase("SELECT [No_], [First Name], [Last Name], [Job Title], [E-Mail] FROM [CRONUS Sverige AB$Employee"); 
+        public static DataSet EmployeeMetaDataContentsOne() => SendToDatabase("SELECT [No_], [First Name], [Last Name], [Job Title], [E-Mail] FROM [CRONUS Sverige AB$Employee]"); 
         public static DataSet EmployeeMetaDataContentsTwo() => SendToDatabase("SELECT[Employee No_], [Cause of Absence Code], [From Date]FROM[CRONUS Sverige AB$Employee Absence]");
         public static DataSet EmployeeMetaDataContentsThree() => SendToDatabase("SELECT[Employee No_], [Qualification Code], [Description] FROM [CRONUS Sverige AB$Employee Qualification]");
         public static DataSet EmployeeMetaDataContentsFour() => SendToDatabase("SELECT [Employee No_], [Line No_], [Relative Code] FROM[CRONUS Sverige AB$Employee Relative]");

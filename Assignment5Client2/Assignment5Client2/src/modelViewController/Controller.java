@@ -15,9 +15,9 @@ import org.tempuri.HyggeServiceSoapProxy;
 
 public class Controller {
 	
-	private String[] employeeMetaDataContentsOneHeader = new String[] { "First Name", "Last Name", "Job Title", "E-Mail" };
+	private String[] employeeMetaDataContentsOneHeader = new String[] { "Employee No_", "First Name", "Last Name", "Job Title", "E-Mail" };
 	
-	private String[] employeeMetaDataContentsTwoHeader = new String[] { "Employee No_", "Cause of Absence Code","From Date"};
+	private String[] employeeMetaDataContentsTwoHeader = new String[] { "Employee No_", "Cause of Absence Code", "Date"};
 	
 	private String[] EmployeeMetaDataContentsThreeHeader = new String[] { "Employee No_", "Qualification Code", "Description"  };
 	
@@ -83,7 +83,7 @@ public class Controller {
 
 				try {
 					String response = cronusFrame.getComboBox().getSelectedItem().toString();
-
+					
 					Object[][] tableArray = proxy.getTableAsList(response);
 					addTable(cronusFrame.getTable(), tableArray, allHeaders());
 				} catch (RemoteException el) {
@@ -116,7 +116,7 @@ public class Controller {
 			Object[] obj = objects[i];
 			DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
 			tableModel.addRow(obj);
-
+			
 		}
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
