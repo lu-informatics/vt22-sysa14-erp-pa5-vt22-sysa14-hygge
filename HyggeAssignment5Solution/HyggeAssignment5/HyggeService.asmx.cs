@@ -118,15 +118,36 @@ namespace HyggeAssignment5
 
         [WebMethod] 
         
-        public DataSet Query1(){
+        public DataSet Query1(string Table){
 
-            return DataAccessLayer.EmployeesRelatives();
+            switch(table)
+            {
+                case "Employee Relatives":
+            return DataAccessLayer.EmployeesRelatives(table);
+                case "Employee Sick 2004":
+                    return DataAccessLayer.EmployeesSick2004();
+                case "Query":
+            return  DataAccessLayer.EmployeeMostAbsent();
+                case "All Tables Constrains":
+            return DataAccessLayer.AllTableConstraints();
 
 
+            }
+        public DataSet Query2()
+        {
 
-    }
+            return DataAccessLayer.EmployeesSick2004();
+
+        }
+
+        public DataSet Query3()
+        {
+            return DataAccessLayer.EmployeeMostAbsent();
+        }
+      
 }
 }
+
 
 
 

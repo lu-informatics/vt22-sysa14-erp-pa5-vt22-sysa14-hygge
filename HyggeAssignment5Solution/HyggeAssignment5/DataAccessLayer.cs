@@ -30,7 +30,7 @@ namespace HyggeAssignment5
         }
 
 
-        public static DataSet EmployeeMetaDataContentsOne() => SendToDatabase("SELECT[No_], [First Name], [Last Name], [Job Title], [E - Mail] FROM[CRONUS Sverige AB$Employee]");
+        public static DataSet EmployeeMetaDataContentsOne(String table) => SendToDatabase("SELECT[No_], [First Name], [Last Name], [Job Title], [E - Mail] FROM[CRONUS Sverige AB$Employee]");
         public static DataSet EmployeeMetaDataContentsTwo() => SendToDatabase("SELECT[Employee No_], [Cause of Absence Code], [From Date]FROM[CRONUS Sverige AB$Employee Absence]");
         public static DataSet EmployeeMetaDataContentsThree() => SendToDatabase("SELECT[Employee No_], [Qualification Code], [Description]FROM[CRONUS Sverige AB$Employee Qualification]");
         public static DataSet EmployeeMetaDataContentsFour() => SendToDatabase("SELECT [Employee No_], [Line No_], [Relative Code] FROM[CRONUS Sverige AB$Employee Relative]");
@@ -43,16 +43,16 @@ namespace HyggeAssignment5
 
 
 
-        public static DataSet EmployeesRelatives() => SendToDatabase("SELECT ER.[First Name], ER.[Last Name], ER.[Birth Date], E.[First Name] , E.[Last Name], E.[Job Title], ER.[Relative Code]FROM[CRONUS Sverige AB$Employee] E JOIN[CRONUS Sverige AB$Employee Relative] ER ON ER.[Employee No_] = E.No_");
-        public static DataSet EmployeesSick2004() => SendToDatabase("SELECT EA.Description , EA.[From Date], E.[First Name] , E.[Last Name], E.[Job Title]FROM[CRONUS Sverige AB$Employee] E JOIN[CRONUS Sverige AB$Employee Absence] EA ON EA.[Employee No_] = E.No_WHERE EA.[From Date] BETWEEN CONVERT(datetime, '2004-01-01')AND CONVERT(datetime, '2004-12-31')AND Description = 'Sjuk'");
-        public static DataSet EmployeeMostAbsent() => SendToDatabase("SELECT e.[First Name] FROM [CRONUS Sverige AB$Employee] e JOIN(SELECT TOP 1 SUM([Quantity(Base)]) AS Quantity, [Employee No_]FROM[CRONUS Sverige AB$Employee Absence] EA GROUP BY[Employee No_]ORDER BY Quantity DESC) q ON q.[Employee No_] = e.No_");
-        public static DataSet AllKeys() => SendToDatabase("SELECT CONSTRAINT_TYPE, CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE CONSTRAINT_TYPE = 'PRIMARY KEY'");
-        public static DataSet AllIndexes() => SendToDatabase("SELECT * FROM sys.indexes");
-        public static DataSet AllTableConstraints() => SendToDatabase("SELECT CONSTRAINT_TYPE, CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS");
-        public static DataSet AllTablesInDBOne() => SendToDatabase("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'");
-        public static DataSet AllTablesInDBTwo() => SendToDatabase("SELECT name AS 'BASE TABLE'FROM sys.tables");
-        public static DataSet AllColumnsEmployeeOne() => SendToDatabase("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'CRONUS Sverige AB$Employee' GROUP BY COLUMN_NAME");
-        public static DataSet AllColumnsEmployeeTwo() => SendToDatabase("SELECT name FROM sys.all_columns WHERE object_id = OBJECT_ID('[CRONUS Sverige AB$Employee]')");
+        public static DataSet EmployeesRelatives(String table) => SendToDatabase("SELECT ER.[First Name], ER.[Last Name], ER.[Birth Date], E.[First Name] , E.[Last Name], E.[Job Title], ER.[Relative Code]FROM[CRONUS Sverige AB$Employee] E JOIN[CRONUS Sverige AB$Employee Relative] ER ON ER.[Employee No_] = E.No_");
+        public static DataSet EmployeesSick2004(String table) => SendToDatabase("SELECT EA.Description , EA.[From Date], E.[First Name] , E.[Last Name], E.[Job Title]FROM[CRONUS Sverige AB$Employee] E JOIN[CRONUS Sverige AB$Employee Absence] EA ON EA.[Employee No_] = E.No_WHERE EA.[From Date] BETWEEN CONVERT(datetime, '2004-01-01')AND CONVERT(datetime, '2004-12-31')AND Description = 'Sjuk'");
+        public static DataSet EmployeeMostAbsent(String table) => SendToDatabase("SELECT e.[First Name] FROM [CRONUS Sverige AB$Employee] e JOIN(SELECT TOP 1 SUM([Quantity(Base)]) AS Quantity, [Employee No_]FROM[CRONUS Sverige AB$Employee Absence] EA GROUP BY[Employee No_]ORDER BY Quantity DESC) q ON q.[Employee No_] = e.No_");
+        public static DataSet AllKeys(String table) => SendToDatabase("SELECT CONSTRAINT_TYPE, CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE CONSTRAINT_TYPE = 'PRIMARY KEY'");
+        public static DataSet AllIndexes(String table) => SendToDatabase("SELECT * FROM sys.indexes");
+        public static DataSet AllTableConstraints(String table) => SendToDatabase("SELECT CONSTRAINT_TYPE, CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS");
+        public static DataSet AllTablesInDBOne(String table) => SendToDatabase("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'");
+        public static DataSet AllTablesInDBTwo(String table) => SendToDatabase("SELECT name AS 'BASE TABLE'FROM sys.tables");
+        public static DataSet AllColumnsEmployeeOne(String table) => SendToDatabase("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'CRONUS Sverige AB$Employee' GROUP BY COLUMN_NAME");
+        public static DataSet AllColumnsEmployeeTwo(String table) => SendToDatabase("SELECT name FROM sys.all_columns WHERE object_id = OBJECT_ID('[CRONUS Sverige AB$Employee]')");
 
 
 

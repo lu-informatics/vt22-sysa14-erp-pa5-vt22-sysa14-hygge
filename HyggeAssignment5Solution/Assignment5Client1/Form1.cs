@@ -75,7 +75,7 @@ namespace Assignment5Client1
 
          void button1_Click(object sender, EventArgs e) // chronological order between button number and DAL query
         {
-            //dataGridView1.DataSource = proxy.Query1().Tables[0];
+            dataGridView1.DataSource = proxy.Query1().Tables[0];
         }
         }
     }
