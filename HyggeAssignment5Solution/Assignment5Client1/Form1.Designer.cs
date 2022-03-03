@@ -36,6 +36,7 @@
             // 
             // comboBoxValue
             // 
+            this.comboBoxValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxValue.FormattingEnabled = true;
             this.comboBoxValue.Location = new System.Drawing.Point(75, 67);
             this.comboBoxValue.Name = "comboBoxValue";

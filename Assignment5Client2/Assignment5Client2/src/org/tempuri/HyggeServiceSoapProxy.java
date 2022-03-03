@@ -56,5 +56,11 @@ public class HyggeServiceSoapProxy implements org.tempuri.HyggeServiceSoap {
     hyggeServiceSoap.print();
   }
   
+  public org.tempuri.TableResponseTableResult table() throws java.rmi.RemoteException{
+    if (hyggeServiceSoap == null)
+      _initHyggeServiceSoapProxy();
+    return hyggeServiceSoap.table();
+  }
+  
   
 }

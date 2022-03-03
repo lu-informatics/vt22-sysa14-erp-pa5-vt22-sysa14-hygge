@@ -10,4 +10,5 @@ package org.tempuri;
 public interface HyggeServiceSoap extends java.rmi.Remote {
     public java.lang.String helloWorld() throws java.rmi.RemoteException;
     public void print() throws java.rmi.RemoteException;
+    public org.tempuri.TableResponseTableResult table() throws java.rmi.RemoteException;
 }
