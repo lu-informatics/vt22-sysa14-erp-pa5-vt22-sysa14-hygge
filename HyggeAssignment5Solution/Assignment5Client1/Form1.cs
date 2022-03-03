@@ -23,13 +23,25 @@ namespace Assignment5Client1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBoxValue.Items.Add("All tables in the database 1");
+
+            comboBoxValue.Items.Add("See Information about Employees and their Relatives");
+            comboBoxValue.Items.Add("See Information about the Employees that have been Absent due to Sickness in the Year of 2004");
+            comboBoxValue.Items.Add("See first Name of the Employee that has been Absent the most");
+            comboBoxValue.Items.Add("See all Keys");
+            comboBoxValue.Items.Add("See all Indexes");
+            comboBoxValue.Items.Add("See all table_constraints");
+            comboBoxValue.Items.Add("See all Tables in the Database Solution One");
+            comboBoxValue.Items.Add("See all Tables in the Database Solution Two");
+            comboBoxValue.Items.Add("See all Columns of the Employee Table Solution One");
+            comboBoxValue.Items.Add("See all Columns of the Employee Table Solution Two");
         }
 
         private void comboBoxValue_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cb = sender as ComboBox;
+            
 
+          
             ArrayOfXElement ds;
             Console.WriteLine(cb.SelectedItem.ToString());
             switch (cb.SelectedItem.ToString())

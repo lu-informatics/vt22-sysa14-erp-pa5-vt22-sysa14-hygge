@@ -74,12 +74,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CronusService.asmx" />
+    <Content Include="HyggeService.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CronusService.asmx.cs">
-      <DependentUpon>CronusService.asmx</DependentUpon>
+    <Compile Include="HyggeService.asmx.cs">
+      <DependentUpon>HyggeService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataAccessLayer.cs" />

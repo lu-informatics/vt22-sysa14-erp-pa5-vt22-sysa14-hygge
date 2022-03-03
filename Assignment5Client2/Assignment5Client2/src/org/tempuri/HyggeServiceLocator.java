@@ -22,7 +22,7 @@ public class HyggeServiceLocator extends org.apache.axis.client.Service implemen
     }
 
     // Use to get a proxy class for HyggeServiceSoap
-    private java.lang.String HyggeServiceSoap_address = "http://localhost/HyggeAssignment5/CronusService.asmx";
+    private java.lang.String HyggeServiceSoap_address = "http://localhost/HyggeAssignment5/HyggeService.asmx";
 
     public java.lang.String getHyggeServiceSoapAddress() {
         return HyggeServiceSoap_address;
