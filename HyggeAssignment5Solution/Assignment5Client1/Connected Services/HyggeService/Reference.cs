@@ -32,14 +32,6 @@ namespace HyggeService
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTableAsList", ReplyAction="*")]
         System.Threading.Tasks.Task<HyggeService.GetTableAsListResponse> GetTableAsListAsync(HyggeService.GetTableAsListRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Query1", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[][]))]
-        HyggeService.ArrayOfXElement Query1();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Query1", ReplyAction="*")]
-        System.Threading.Tasks.Task<HyggeService.ArrayOfXElement> Query1Async();
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -162,16 +154,6 @@ namespace HyggeService
             HyggeService.GetTableAsListRequest inValue = new HyggeService.GetTableAsListRequest();
             inValue.tableName = tableName;
             return ((HyggeService.HyggeServiceSoap)(this)).GetTableAsListAsync(inValue);
-        }
-        
-        public HyggeService.ArrayOfXElement Query1()
-        {
-            return base.Channel.Query1();
-        }
-        
-        public System.Threading.Tasks.Task<HyggeService.ArrayOfXElement> Query1Async()
-        {
-            return base.Channel.Query1Async();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

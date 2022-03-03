@@ -8,13 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HyggeService;
 
 namespace Assignment5Client1
 {
     public partial class Form1 : Form //Döpa om
     {
-        //static hyggeservicesoapclient.endpointconfiguration config = hyggeservicesoapclient.endpointconfiguration.hyggeservicesoap;
-        //hyggeservicesoapclient proxy = new hyggeservicesoapclient(config);
+        static hyggeservicesoapclient.endpointconfiguration config = hyggeservicesoapclient.endpointconfiguration.hyggeservicesoap;
+        hyggeservicesoapclient proxy = new hyggeservicesoapclient(config);
         public Form1()
         {
             InitializeComponent();
