@@ -75,7 +75,7 @@ public class CronusFrame extends JFrame {
 		comboBox.addItem("See First Name of the Employee that has been Absent the most");
 		comboBox.addItem("See all Keys");
 		comboBox.addItem("See all Indexes");
-		comboBox.addItem("See all table_constraints");
+		comboBox.addItem("See all Table_Constraints");
 		comboBox.addItem("See all Tables in the Database Solution One");
 		comboBox.addItem("See all Tables in the Database Solution Two");
 		comboBox.addItem("See all Columns of the Employee Table Solution One");

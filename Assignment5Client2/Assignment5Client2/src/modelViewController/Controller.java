@@ -47,9 +47,9 @@ public class Controller {
 	
 	private String[]  AllKeysHeader = new String[]  {"CONSTRAINT_NAME", "CONSTRAINT_TYPE"};
 	
-	private String[]  AllIndexesHeader = new String[]  {"Description", "From Date", "First Name", "Last Name",  "Job Title",};
+	private String[]  AllIndexesHeader = new String[]  { "name", "type_desc" };
 	
-	private String[]  AllTableConstraintsHeader = new String[]  {"CONSTRAINT_NAME", "CONSTRAINT_TYPE"};
+	private String[]  AllTableConstraintsHeader = new String[]  { "CONSTRAINT_TYPE", "CONSTRAINT_NAME" };
 	
 	
 	
