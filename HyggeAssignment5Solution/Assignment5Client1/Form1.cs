@@ -14,7 +14,7 @@ namespace Assignment5Client1
 {
     public partial class Form1 : Form //Döpa om
     {
-        static hyggeservicesoapclient.endpointconfiguration config = hyggeservicesoapclient.endpointconfiguration.hyggeservicesoap;
+        static HyggeServiceSoapClient.endpointconfiguration config = hyggeservicesoapclient.endpointconfiguration.hyggeservicesoap;
         hyggeservicesoapclient proxy = new hyggeservicesoapclient(config);
         public Form1()
         {
