@@ -70,12 +70,37 @@ namespace HyggeAssignment5
 
         [WebMethod]
         public List<object[]> GetTableAsList(string tableName) //C# can handle DataSet, but it's not optimal for Java. List of object[] and fill it with values generated from DataSet. 
+                                                                                            
 
         {
             List<object[]> list = new List<object[]>();
-            DataSet dataSet = new DataSet();
+            DataSet dataSet = GetDataSet(tableName);    
 
 
+
+            DataTable dataTable = dataSet.Tables[0]; //a datatable represents a single table in the database.  
+            foreach (DataRow row in dataTable.Rows) //Foreach row in the chosen tables row, we set the row to an array, and add the array to the list and return the list. 
+            {
+                var array = row.ItemArray;
+                list.Add(array);
+            }
+            return list; //when we make calls in Java, we will recieve the list of object[] representing our tables in the database. 
+
+        }
+
+        [WebMethod]
+        public DataSet GetDataTableAsDataSet(string tableName) //C# can handle DataSet, but it's not optimal for Java. List of object[] and fill it with values generated from DataSet. 
+
+
+        {
+
+            return GetDataSet(tableName);
+        }
+
+        public DataSet GetDataSet(String tableName)
+        {
+
+            DataSet dataSet = new DataSet(); 
 
             switch (tableName)
             {
@@ -133,7 +158,7 @@ namespace HyggeAssignment5
                     break;
 
                 case "See all Keys":
-                    dataSet = DataAccessLayer.AllKeys();    
+                    dataSet = DataAccessLayer.AllKeys();
                     break;
 
                 case "See all Indexes":
@@ -153,27 +178,24 @@ namespace HyggeAssignment5
                     break;
 
                 case "See all Columns of the Employee Table Solution One":
-                    dataSet = DataAccessLayer.AllColumnsEmployeeOne();  
+                    dataSet = DataAccessLayer.AllColumnsEmployeeOne();
                     break;
 
                 case "See all Columns of the Employee Table Solution Two":
                     dataSet = DataAccessLayer.AllColumnsEmployeeTwo();
                     break;
-               
+
 
             }
 
-
-            DataTable dataTable = dataSet.Tables[0]; //a datatable represents a single table in the database.  
-            foreach (DataRow row in dataTable.Rows) //Foreach row in the chosen tables row, we set the row to an array, and add the array to the list and return the list. 
-            {
-                var array = row.ItemArray;
-                list.Add(array);
-            }
-            return list; //when we make calls in Java, we will recieve the list of object[] representing our tables in the database. 
-
+            return dataSet;
         }
     }
+
+
+
+
+
 }
 
 

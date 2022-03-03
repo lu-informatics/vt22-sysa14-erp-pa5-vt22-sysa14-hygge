@@ -44,8 +44,8 @@ namespace HyggeAssignment5
 
 
         public static DataSet EmployeesRelatives() => SendToDatabase("SELECT ER.[First Name], ER.[Last Name], ER.[Birth Date], E.[First Name] , E.[Last Name], E.[Job Title], ER.[Relative Code] FROM[CRONUS Sverige AB$Employee] E JOIN[CRONUS Sverige AB$Employee Relative] ER ON ER.[Employee No_] = E.No_");
-        public static DataSet EmployeesSick2004() => SendToDatabase("SELECT EA.Description , EA.[From Date], E.[First Name] , E.[Last Name], E.[Job Title]FROM[CRONUS Sverige AB$Employee] E JOIN[CRONUS Sverige AB$Employee Absence] EA ON EA.[Employee No_] = E.No_WHERE EA.[From Date] BETWEEN CONVERT(datetime, '2004-01-01')AND CONVERT(datetime, '2004-12-31')AND Description = 'Sjuk'");
-        public static DataSet EmployeeMostAbsent() => SendToDatabase("SELECT e.[First Name] FROM [CRONUS Sverige AB$Employee] e JOIN(SELECT TOP 1 SUM([Quantity(Base)]) AS Quantity, [Employee No_]FROM[CRONUS Sverige AB$Employee Absence] EA GROUP BY[Employee No_]ORDER BY Quantity DESC) q ON q.[Employee No_] = e.No_");
+        public static DataSet EmployeesSick2004() => SendToDatabase("SELECT EA.Description , EA.[From Date], E.[First Name] , E.[Last Name], E.[Job Title]FROM[CRONUS Sverige AB$Employee] E JOIN [CRONUS Sverige AB$Employee Absence] EA ON EA.[Employee No_] = E.No_ WHERE EA.[From Date] BETWEEN CONVERT(datetime, '2004-01-01') AND CONVERT(datetime, '2004-12-31')AND Description = 'Sjuk'");
+        public static DataSet EmployeeMostAbsent() => SendToDatabase("SELECT e.[First Name] FROM [CRONUS Sverige AB$Employee] e JOIN(SELECT TOP 1 SUM([Quantity (Base)]) AS Quantity, [Employee No_] FROM [CRONUS Sverige AB$Employee Absence] EA GROUP BY[Employee No_] ORDER BY Quantity DESC) q ON q.[Employee No_] = e.No_");
         public static DataSet AllKeys() => SendToDatabase("SELECT CONSTRAINT_TYPE, CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE CONSTRAINT_TYPE = 'PRIMARY KEY'");
         public static DataSet AllIndexes() => SendToDatabase("SELECT * FROM sys.indexes");
         public static DataSet AllTableConstraints() => SendToDatabase("SELECT CONSTRAINT_TYPE, CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS");
@@ -168,7 +168,7 @@ namespace HyggeAssignment5
         {
             try
             {
-                using (SqlConnection cnn = new SqlConnection("Data Source = SYST4DEV01; Initial Catalog = Cronus; User ID=hygge ; Password =hej123 "))
+                using (SqlConnection cnn = new SqlConnection("Data Source = SYSA12; Initial Catalog = Cronos; User ID=hygge ; Password =hej123 "))
                 { //SQL Connection
                     cnn.Open();
                     using (SqlCommand command = new SqlCommand(sqlQuery, cnn)) // "using" keyword ensures disposal when objects are no longer used
