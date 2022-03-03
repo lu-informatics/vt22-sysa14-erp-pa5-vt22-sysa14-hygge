@@ -1,5 +1,4 @@
-﻿using 
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +13,8 @@ namespace Assignment5Client1
 {
     public partial class Form1 : Form //Döpa om
     {
-        static HyggeServiceSoapClient.EndpointConfiguration config = HyggeServiceSoapClient.EndpointConfiguration.HyggeServiceSoap;
-        HyggeServiceSoapClient proxy = new HyggeServiceSoapClient(config);
+        //static hyggeservicesoapclient.endpointconfiguration config = hyggeservicesoapclient.endpointconfiguration.hyggeservicesoap;
+        //hyggeservicesoapclient proxy = new hyggeservicesoapclient(config);
         public Form1()
         {
             InitializeComponent();
@@ -44,42 +43,48 @@ namespace Assignment5Client1
             //comboBox.addItem("See all Columns of the Employee Table Solution One");
             //comboBox.addItem("See all Columns of the Employee Table Solution Two");
 
-            ArrayOfXElement ds;
-            Console.WriteLine(cb.SelectedItem.ToString());
-            switch (cb.SelectedItem.ToString())
-            {
-                case "all tables in the database 1":
-                    ds = proxy.Table();
-                    break;
-                default: ds = proxy.Table();
-                    break;
-            }
+    //        ArrayOfXElement ds;
+    //        Console.WriteLine(cb.SelectedItem.ToString());
+    //        switch (cb.SelectedItem.ToString())
+    //        {
+    //            case "all tables in the database 1":
+    //                ds = proxy.Table();
+    //                break;
+    //            default: ds = proxy.Table();
+    //                break;
+    //        }
             
-            dataGridView1.DataSource = ToDataSet(ds).Tables[0];
-    }
-        public DataSet ToDataSet(ArrayOfXElement arrayOfXElement)
+    //        dataGridView1.DataSource = ToDataSet(ds).Tables[0];
+    //}
+        //public DataSet ToDataSet(ArrayOfXElement arrayOfXElement)
       
-            {
-            Console.WriteLine(arrayOfXElement);
-            Console.WriteLine(arrayOfXElement.Nodes[0]);
-                var strSchema = arrayOfXElement.Nodes[0].ToString();
-                var strData = arrayOfXElement.Nodes[1].ToString();
-                var strXml = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n\t<DataSet>";
-                strXml += strSchema + strData;
-                strXml += "</DataSet>";
+        //    {
+        //    Console.WriteLine(arrayOfXElement);
+        //    Console.WriteLine(arrayOfXElement.Nodes[0]);
+        //        var strSchema = arrayOfXElement.Nodes[0].ToString();
+        //        var strData = arrayOfXElement.Nodes[1].ToString();
+        //        var strXml = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n\t<DataSet>";
+        //        strXml += strSchema + strData;
+        //        strXml += "</DataSet>";
 
-                DataSet ds = new DataSet("TestDataSet");
-                ds.ReadXml(new MemoryStream(Encoding.UTF8.GetBytes(strXml)));
+        //        DataSet ds = new DataSet("TestDataSet");
+        //        ds.ReadXml(new MemoryStream(Encoding.UTF8.GetBytes(strXml)));
 
-                return ds;
-            }
+        //        return ds;
+        //    }
 
-        private void button1_Click(object sender, EventArgs e) // chronological order between button number and DAL query
+         void button1_Click(object sender, EventArgs e) // chronological order between button number and DAL query
         {
-            dataGridView1.DataSource = proxy.Query1().Tables[0];
+            //dataGridView1.DataSource = proxy.Query1().Tables[0];
+        }
         }
     }
-    }
+}
+
+
+
+
+
 
 
 
