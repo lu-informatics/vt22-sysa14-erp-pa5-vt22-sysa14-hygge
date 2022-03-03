@@ -3,13 +3,14 @@ package modelViewController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
-import javax.xml.crypto.Data;
 
 import org.tempuri.HyggeServiceSoapProxy;
 
@@ -115,6 +116,15 @@ public class Controller {
 		for (int i = 0; i < objects.length; i++) {
 			Object[] obj = objects[i];
 			DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
+			/*  Add a check to see if any of the objects in the row is of the class GregorianDate */
+			for (int j = 0; j < obj.length; j++) { 
+				if (obj[j] instanceof GregorianCalendar) { // GergorianDate has no toString() method, so we create a custom string
+					GregorianCalendar gregDate = (GregorianCalendar) obj[j]; // to represent the date
+					String finalDate = gregDate.get(Calendar.YEAR) + "-" + gregDate.get(Calendar.MONTH) + "-" + gregDate.get(Calendar.DAY_OF_MONTH);
+					obj[j] = finalDate;
+				}
+			}
+			/* End of added check */
 			tableModel.addRow(obj);
 			
 		}
