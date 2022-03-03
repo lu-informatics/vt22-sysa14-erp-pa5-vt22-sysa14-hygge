@@ -23,27 +23,25 @@ namespace Assignment5Client1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBoxValue.Items.Add("All tables in the database 1");
+
+            comboBoxValue.Items.Add("See Information about Employees and their Relatives");
+            comboBoxValue.Items.Add("See Information about the Employees that have been Absent due to Sickness in the Year of 2004");
+            comboBoxValue.Items.Add("See first Name of the Employee that has been Absent the most");
+            comboBoxValue.Items.Add("See all Keys");
+            comboBoxValue.Items.Add("See all Indexes");
+            comboBoxValue.Items.Add("See all table_constraints");
+            comboBoxValue.Items.Add("See all Tables in the Database Solution One");
+            comboBoxValue.Items.Add("See all Tables in the Database Solution Two");
+            comboBoxValue.Items.Add("See all Columns of the Employee Table Solution One");
+            comboBoxValue.Items.Add("See all Columns of the Employee Table Solution Two");
         }
 
         private void comboBoxValue_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cb = sender as ComboBox;
+            
 
-            case "See Metadata for the Employee Tables and Related Tables":
-                return null;
-
-            comboBox.addItem("See Information about Employees and their Relatives");
-            comboBox.addItem("See Information about the Employees that have been Absent due to Sickness in the Year of 2004");
-            comboBox.addItem("See first Name of the Employee that has been Absent the most");
-            comboBox.addItem("See all Keys");
-            comboBox.addItem("See all Indexes");
-            comboBox.addItem("See all table_constraints");
-            comboBox.addItem("See all Tables in the Database Solution One");
-            comboBox.addItem("See all Tables in the Database Solution Two");
-            comboBox.addItem("See all Columns of the Employee Table Solution One");
-            comboBox.addItem("See all Columns of the Employee Table Solution Two");
-
+          
             ArrayOfXElement ds;
             Console.WriteLine(cb.SelectedItem.ToString());
             switch (cb.SelectedItem.ToString())

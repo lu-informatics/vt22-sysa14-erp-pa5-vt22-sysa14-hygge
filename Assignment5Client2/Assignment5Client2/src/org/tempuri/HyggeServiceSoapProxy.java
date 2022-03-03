@@ -44,22 +44,16 @@ public class HyggeServiceSoapProxy implements org.tempuri.HyggeServiceSoap {
     return hyggeServiceSoap;
   }
   
-  public java.lang.String helloWorld() throws java.rmi.RemoteException{
+  public org.tempuri.ViewAllResponseViewAllResult viewAll(java.lang.String table) throws java.rmi.RemoteException{
     if (hyggeServiceSoap == null)
       _initHyggeServiceSoapProxy();
-    return hyggeServiceSoap.helloWorld();
+    return hyggeServiceSoap.viewAll(table);
   }
   
-  public void print() throws java.rmi.RemoteException{
+  public java.lang.Object[][] getTableAsList(java.lang.String tableName) throws java.rmi.RemoteException{
     if (hyggeServiceSoap == null)
       _initHyggeServiceSoapProxy();
-    hyggeServiceSoap.print();
-  }
-  
-  public org.tempuri.TableResponseTableResult table() throws java.rmi.RemoteException{
-    if (hyggeServiceSoap == null)
-      _initHyggeServiceSoapProxy();
-    return hyggeServiceSoap.table();
+    return hyggeServiceSoap.getTableAsList(tableName);
   }
   
   

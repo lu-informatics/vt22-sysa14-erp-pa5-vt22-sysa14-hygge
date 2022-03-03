@@ -33,7 +33,7 @@ public class CronusFrame extends JFrame {
 	public CronusFrame() {
 		setBackground(SystemColor.activeCaption);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 720, 548);
+		setBounds(100, 100, 860, 548);
 		contentPane = new JPanel();
 		contentPane.setBackground(SystemColor.inactiveCaption);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -45,19 +45,31 @@ public class CronusFrame extends JFrame {
 		contentPane.add(lblNewLabel);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(22, 120, 655, 283);
+		scrollPane.setBounds(22, 120, 812, 283);
 		contentPane.add(scrollPane);
 		this.setVisible(true);
 
 		table = new JTable();
+		table.setEnabled(false);
 		scrollPane.setViewportView(table);
 
 		comboBox = new JComboBox();
 		
 		comboBox.setBackground(SystemColor.menu);
-		comboBox.setBounds(22, 87, 655, 22);
+		comboBox.setBounds(22, 87, 812, 22);
 		contentPane.add(comboBox);
-		comboBox.addItem("See Metadata for the Employee Tables and Related Tables");
+		comboBox.addItem("See Metadata for the Employee Tables and Related Tables (one)");
+		comboBox.addItem("See Metadata for the Employee Tables and Related Tables (two)");
+		comboBox.addItem("See Metadata for the Employee Tables and Related Tables (three)");
+		comboBox.addItem("See Metadata for the Employee Tables and Related Tables (four)");
+		comboBox.addItem("See Metadata for the Employee Tables and Related Tables (five)");
+		comboBox.addItem("See Metadata for the Employee Tables and Related Tables (six)");
+		comboBox.addItem ("See Metadata for the Employee Tables and Related Tables (seven)");
+		comboBox.addItem ("See Metadata for the Employee Tables and Related Tables (eight)");
+		comboBox.addItem ("See Metadata for the Employee Tables and Related Tables (nine)");
+		comboBox.addItem ("See Metadata for the Employee Tables and Related Tables (ten)");
+		
+		
 		comboBox.addItem("See Information about Employees and their Relatives");
 		comboBox.addItem("See Information about the Employees that have been Absent due to Sickness in the Year of 2004");
 		comboBox.addItem("See first Name of the Employee that has been Absent the most");
