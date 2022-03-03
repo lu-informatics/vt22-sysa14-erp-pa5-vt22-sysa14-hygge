@@ -40,17 +40,17 @@
             this.comboBoxValue.FormattingEnabled = true;
             this.comboBoxValue.Location = new System.Drawing.Point(75, 67);
             this.comboBoxValue.Name = "comboBoxValue";
-            this.comboBoxValue.Size = new System.Drawing.Size(244, 23);
+            this.comboBoxValue.Size = new System.Drawing.Size(678, 23);
             this.comboBoxValue.TabIndex = 0;
             this.comboBoxValue.SelectedIndexChanged += new System.EventHandler(this.comboBoxValue_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(75, 139);
+            this.dataGridView1.Location = new System.Drawing.Point(75, 130);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(452, 247);
+            this.dataGridView1.Size = new System.Drawing.Size(678, 256);
             this.dataGridView1.TabIndex = 1;
             // 
             // label1
