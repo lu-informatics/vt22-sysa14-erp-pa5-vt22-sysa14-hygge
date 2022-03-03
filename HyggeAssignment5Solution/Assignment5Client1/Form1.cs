@@ -1,4 +1,4 @@
-﻿using HyggeService;
+﻿using 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +30,20 @@ namespace Assignment5Client1
         {
             ComboBox cb = sender as ComboBox;
 
+            //case "See Metadata for the Employee Tables and Related Tables":
+            //    return null;
+
+            //comboBox.addItem("See Information about Employees and their Relatives");
+            //comboBox.addItem("See Information about the Employees that have been Absent due to Sickness in the Year of 2004");
+            //comboBox.addItem("See first Name of the Employee that has been Absent the most");
+            //comboBox.addItem("See all Keys");
+            //comboBox.addItem("See all Indexes");
+            //comboBox.addItem("See all table_constraints");
+            //comboBox.addItem("See all Tables in the Database Solution One");
+            //comboBox.addItem("See all Tables in the Database Solution Two");
+            //comboBox.addItem("See all Columns of the Employee Table Solution One");
+            //comboBox.addItem("See all Columns of the Employee Table Solution Two");
+
             ArrayOfXElement ds;
             Console.WriteLine(cb.SelectedItem.ToString());
             switch (cb.SelectedItem.ToString())
@@ -59,7 +73,12 @@ namespace Assignment5Client1
 
                 return ds;
             }
+
+        private void button1_Click(object sender, EventArgs e) // chronological order between button number and DAL query
+        {
+            dataGridView1.DataSource = proxy.Query1().Tables[0];
         }
+    }
     }
 
 

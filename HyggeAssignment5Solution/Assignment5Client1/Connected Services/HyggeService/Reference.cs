@@ -16,26 +16,72 @@ namespace HyggeService
     public interface HyggeServiceSoap
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ViewAll", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string HelloWorld();
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[][]))]
+        HyggeService.ArrayOfXElement ViewAll(string table);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> HelloWorldAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ViewAll", ReplyAction="*")]
+        System.Threading.Tasks.Task<HyggeService.ArrayOfXElement> ViewAllAsync(string table);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Print", ReplyAction="*")]
+        // CODEGEN: Parameter 'GetTableAsListResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'Microsoft.Xml.Serialization.XmlArrayItemAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTableAsList", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        void Print();
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[][]))]
+        HyggeService.GetTableAsListResponse GetTableAsList(HyggeService.GetTableAsListRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Print", ReplyAction="*")]
-        System.Threading.Tasks.Task PrintAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTableAsList", ReplyAction="*")]
+        System.Threading.Tasks.Task<HyggeService.GetTableAsListResponse> GetTableAsListAsync(HyggeService.GetTableAsListRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Table", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Query1", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        HyggeService.ArrayOfXElement Table();
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[][]))]
+        HyggeService.ArrayOfXElement Query1();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Table", ReplyAction="*")]
-        System.Threading.Tasks.Task<HyggeService.ArrayOfXElement> TableAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Query1", ReplyAction="*")]
+        System.Threading.Tasks.Task<HyggeService.ArrayOfXElement> Query1Async();
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTableAsList", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class GetTableAsListRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string tableName;
+        
+        public GetTableAsListRequest()
+        {
+        }
+        
+        public GetTableAsListRequest(string tableName)
+        {
+            this.tableName = tableName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTableAsListResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class GetTableAsListResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfAnyType")]
+        [System.Xml.Serialization.XmlArrayItemAttribute(NestingLevel=1)]
+        public object[][] GetTableAsListResult;
+        
+        public GetTableAsListResponse()
+        {
+        }
+        
+        public GetTableAsListResponse(object[][] GetTableAsListResult)
+        {
+            this.GetTableAsListResult = GetTableAsListResult;
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
@@ -81,34 +127,51 @@ namespace HyggeService
         {
         }
         
-        public string HelloWorld()
+        public HyggeService.ArrayOfXElement ViewAll(string table)
         {
-            return base.Channel.HelloWorld();
+            return base.Channel.ViewAll(table);
         }
         
-        public System.Threading.Tasks.Task<string> HelloWorldAsync()
+        public System.Threading.Tasks.Task<HyggeService.ArrayOfXElement> ViewAllAsync(string table)
         {
-            return base.Channel.HelloWorldAsync();
+            return base.Channel.ViewAllAsync(table);
         }
         
-        public void Print()
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HyggeService.GetTableAsListResponse HyggeService.HyggeServiceSoap.GetTableAsList(HyggeService.GetTableAsListRequest request)
         {
-            base.Channel.Print();
+            return base.Channel.GetTableAsList(request);
         }
         
-        public System.Threading.Tasks.Task PrintAsync()
+        public object[][] GetTableAsList(string tableName)
         {
-            return base.Channel.PrintAsync();
+            HyggeService.GetTableAsListRequest inValue = new HyggeService.GetTableAsListRequest();
+            inValue.tableName = tableName;
+            HyggeService.GetTableAsListResponse retVal = ((HyggeService.HyggeServiceSoap)(this)).GetTableAsList(inValue);
+            return retVal.GetTableAsListResult;
         }
         
-        public HyggeService.ArrayOfXElement Table()
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HyggeService.GetTableAsListResponse> HyggeService.HyggeServiceSoap.GetTableAsListAsync(HyggeService.GetTableAsListRequest request)
         {
-            return base.Channel.Table();
+            return base.Channel.GetTableAsListAsync(request);
         }
         
-        public System.Threading.Tasks.Task<HyggeService.ArrayOfXElement> TableAsync()
+        public System.Threading.Tasks.Task<HyggeService.GetTableAsListResponse> GetTableAsListAsync(string tableName)
         {
-            return base.Channel.TableAsync();
+            HyggeService.GetTableAsListRequest inValue = new HyggeService.GetTableAsListRequest();
+            inValue.tableName = tableName;
+            return ((HyggeService.HyggeServiceSoap)(this)).GetTableAsListAsync(inValue);
+        }
+        
+        public HyggeService.ArrayOfXElement Query1()
+        {
+            return base.Channel.Query1();
+        }
+        
+        public System.Threading.Tasks.Task<HyggeService.ArrayOfXElement> Query1Async()
+        {
+            return base.Channel.Query1Async();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -152,11 +215,11 @@ namespace HyggeService
         {
             if ((endpointConfiguration == EndpointConfiguration.HyggeServiceSoap))
             {
-                return new System.ServiceModel.EndpointAddress("http://localhost/HyggeAssignment5/CronusService.asmx");
+                return new System.ServiceModel.EndpointAddress("http://localhost/HyggeAssignment5/HyggeService.asmx");
             }
             if ((endpointConfiguration == EndpointConfiguration.HyggeServiceSoap12))
             {
-                return new System.ServiceModel.EndpointAddress("http://localhost/HyggeAssignment5/CronusService.asmx");
+                return new System.ServiceModel.EndpointAddress("http://localhost/HyggeAssignment5/HyggeService.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
