@@ -61,7 +61,7 @@ namespace HyggeAssignment5
 
 
             }
-            throw new Exception("The table was not found in the database!"); 
+            throw new Exception("The table was not found in the database!");
 
         }
 
@@ -114,7 +114,18 @@ namespace HyggeAssignment5
             return list; //when we make calls in Java, we will recieve the list of object[] representing our tables in the database. 
 
         }
+
+
+        [WebMethod] 
+        
+        public DataSet Query1(){
+
+            return DataAccessLayer.EmployeesRelatives();
+
+
+
     }
+}
 }
 
 
