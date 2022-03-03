@@ -18,7 +18,7 @@ public class Controller {
 	
 	private String[] employeeMetaDataContentsOneHeader = new String[] { "Employee No_", "First Name", "Last Name", "Job Title", "E-Mail" };
 	
-	private String[] employeeMetaDataContentsTwoHeader = new String[] { "Employee No_", "Cause of Absence Code", "Date"};
+	private String[] employeeMetaDataContentsTwoHeader = new String[] { "Employee No_", "Cause of Absence Code", " From Date"};
 	
 	private String[] EmployeeMetaDataContentsThreeHeader = new String[] { "Employee No_", "Qualification Code", "Description"  };
 	
@@ -43,9 +43,9 @@ public class Controller {
 	
 	
 	
-	private String[]  EmployeeMostAbsentHeaders = new String[]  {"Descriptio"};
+	private String[]  EmployeeMostAbsentHeader = new String[]  {"Description"};
 	
-	private String[]  AllKeysHeaders = new String[]  {"Description", "From Date", "First Name", "Last Name",  "Job Title",};
+	private String[]  AllKeysHeader = new String[]  {"CONSTRAINT_NAME", "CONSTRAINT_TYPE"};
 	
 	private String[]  AllIndexesHeader = new String[]  {"Description", "From Date", "First Name", "Last Name",  "Job Title",};
 	
@@ -168,9 +168,9 @@ public class Controller {
 		case "See Information about the Employees that have been absent due to Sickness in the Year of 2004":
 			return EmployeesSick2004Header;
 		case "See First Name of the Employee that has been Absent the most":
-			return  EmployeeMostAbsentHeaders;
+			return  EmployeeMostAbsentHeader;
 		case "See all Keys":
-			return AllKeysHeaders;
+			return AllKeysHeader;
 		case "See all Indexes":
 			return   AllIndexesHeader;
 		case "See all Table_Constraints":
