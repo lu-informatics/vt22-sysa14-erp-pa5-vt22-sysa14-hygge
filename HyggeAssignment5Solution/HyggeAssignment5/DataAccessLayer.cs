@@ -30,7 +30,18 @@ namespace HyggeAssignment5
         }
 
 
-        public static DataSet EmployeeMetaDataContents() => SendToDatabase("");
+        public static DataSet EmployeeMetaDataContentsOne() => SendToDatabase("SELECT[No_], [First Name], [Last Name], [Job Title], [E - Mail] FROM[CRONUS Sverige AB$Employee]");
+        public static DataSet EmployeeMetaDataContentsTwo() => SendToDatabase("SELECT[Employee No_], [Cause of Absence Code], [From Date]FROM[CRONUS Sverige AB$Employee Absence]");
+        public static DataSet EmployeeMetaDataContentsThree() => SendToDatabase("SELECT[Employee No_], [Qualification Code], [Description]FROM[CRONUS Sverige AB$Employee Qualification]");
+        public static DataSet EmployeeMetaDataContentsFour() => SendToDatabase("SELECT [Employee No_], [Line No_], [Relative Code] FROM[CRONUS Sverige AB$Employee Relative]");
+        public static DataSet EmployeeMetaDataContentsFive() => SendToDatabase("SELECT[Code], [Description] FROM[CRONUS Sverige AB$Employee Statistics Group]");
+        public static DataSet EmployeeMetaDataContentsSix() => SendToDatabase("SELECT * FROM INFORMATION_SCHEMA.TABLESWHERE TABLE_NAME = 'CRONUS Sverige AB$Employee'");
+        public static DataSet EmployeeMetaDataContentsSeven() => SendToDatabase("SELECT * FROM INFORMATION_SCHEMA.TABLESWHERE TABLE_NAME = 'CRONUS Sverige AB$Employee Absence'");
+        public static DataSet EmployeeMetaDataContentsEight() => SendToDatabase("SELECT * FROM INFORMATION_SCHEMA.TABLESWHERE TABLE_NAME = 'CRONUS Sverige AB$Employee Qualification'");
+        public static DataSet EmployeeMetaDataContentsNine() => SendToDatabase("SELECT * FROM INFORMATION_SCHEMA.TABLESWHERE TABLE_NAME = 'CRONUS Sverige AB$Employee Relative'");
+        public static DataSet EmployeeMetaDataContentsTen() => SendToDatabase("SELECT * FROM INFORMATION_SCHEMA.TABLESWHERE TABLE_NAME = 'CRONUS Sverige AB$Employee Statistics Group'");
+
+
 
         public static DataSet EmployeesRelatives() => SendToDatabase("SELECT ER.[First Name], ER.[Last Name], ER.[Birth Date], E.[First Name] , E.[Last Name], E.[Job Title], ER.[Relative Code]FROM[CRONUS Sverige AB$Employee] E JOIN[CRONUS Sverige AB$Employee Relative] ER ON ER.[Employee No_] = E.No_");
         public static DataSet EmployeesSick2004() => SendToDatabase("SELECT EA.Description , EA.[From Date], E.[First Name] , E.[Last Name], E.[Job Title]FROM[CRONUS Sverige AB$Employee] E JOIN[CRONUS Sverige AB$Employee Absence] EA ON EA.[Employee No_] = E.No_WHERE EA.[From Date] BETWEEN CONVERT(datetime, '2004-01-01')AND CONVERT(datetime, '2004-12-31')AND Description = 'Sjuk'");
