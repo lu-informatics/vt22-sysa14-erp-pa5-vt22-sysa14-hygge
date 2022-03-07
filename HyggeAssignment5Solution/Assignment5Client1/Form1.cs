@@ -41,6 +41,8 @@ namespace Assignment5Client1
             comboBoxValue.Items.Add("See all Indexes");
             comboBoxValue.Items.Add("See all Table_Constraints");
             comboBoxValue.Items.Add("See all Tables in the Database Solution One");
+            comboBoxValue.Items.Add("See all Tables in the Database Solution Two");
+            comboBoxValue.Items.Add("See all Columns of the Employee Table Solution One");
             comboBoxValue.Items.Add("See all Columns of the Employee Table Solution Two");
             
 
